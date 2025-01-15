@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            background-color: #80d4ea;
+        }
+
+        #clock {
+            height: 100px;
+            width: 800px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding-top: 70px;
+            font-family: courier, monospace;
+            text-align: center;
+            color: white;
+            font-size: 100px;
+        }
+    </style>
+    <!-- Link to jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function displayTime() {
+                var currentTime = new Date();
+                var hours = currentTime.getHours();
+                var minutes = currentTime.getMinutes();
+                var seconds = currentTime.getSeconds();
+                var clockDiv = document.getElementById('clock');
+                clockDiv.innerText = hours + ":" + minutes + ":" + seconds;
+            }
+            setInterval(displayTime, 1000);
+            displayTime();
+        });
+    </script>
+</head>
+<body>
+    <div id="clock"></div>
+</body>
+</html>
+
+
